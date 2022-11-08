@@ -1,0 +1,72 @@
+.contact-us {
+  background: #1c1c1c;
+  color: white;
+  width: 100vw;
+  height: 40vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.contact-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 30%;
+}
+.contact-header .registered {
+  font-size: xx-small;
+  border: 0.5px solid white;
+  border-radius: 10px;
+  padding: 0.2px 3px;
+  transform: translate(45px, 20px);
+}
+.contact-address {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: start;
+  width: 30%;
+}
+.contact-address h4 {
+  padding-bottom: 1rem;
+}
+.email,
+.phone,
+.address {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 0.5rem;
+}
+.phone div:nth-child(2),
+.email div:nth-child(2),
+.address div:nth-child(2) {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+.socials {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 30%;
+}
+.socials h4 {
+  padding-bottom: 1rem;
+}
+.facebook,
+.instagram,
+.twitter,
+.tiktok {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 0.5rem;
+}
+.facebook div:nth-child(2),
+.instagram div:nth-child(2),
+.twitter div:nth-child(2),
+.tiktok div:nth-child(2) {
+  padding-left: 10px;
+}

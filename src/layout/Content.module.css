@@ -1,0 +1,274 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.body {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  padding: 0 10rem;
+}
+.welcome-message p {
+  text-align: center;
+  padding: 1rem;
+}
+.message-button {
+  background-color: rgb(113, 113, 113);
+  border: 1px solid rgb(113, 113, 113);
+  color: white;
+  border-radius: 1.5rem;
+  margin: 0 1rem;
+  padding: 0.5rem 3rem;
+  cursor: pointer;
+}
+
+.available-props {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-top: 1px solid rgb(113, 113, 113);
+}
+.prop-header {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 1rem 0;
+}
+.houses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.house {
+  border: 1px solid rgb(189, 189, 189);
+  margin: 0.5rem 0.1rem;
+  padding: 1rem 0;
+}
+.houses img {
+  width: 355px;
+  height: 400px;
+  object-fit: cover;
+  margin: 0;
+}
+.houses .property-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(189, 189, 189);
+  padding: 0 5rem;
+}
+.property-desc h4 {
+  margin-bottom: 0;
+}
+.property-desc p {
+  margin-top: 0;
+}
+.houses .property-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.houses .property-actions a {
+  padding: 0 2rem;
+}
+.houses .property-actions p {
+  padding: 0 2rem;
+}
+.available-props .property-view {
+  background-color: rgb(83, 137, 218);
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  padding: 0.7rem 2.5rem;
+}
+.other-props {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+      rgba(20, 116, 242, 0.3) 100%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url("../assets/images/living-room.jpg");
+    border-top: 1px solid rgb(113, 113, 113);
+    margin-top: 1rem;
+}
+.other-props h3 {
+  color: aliceblue;
+  padding: 1rem 0;
+}
+.props-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.article {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 2rem 0.5rem;
+  width: 20rem;
+  height: 20rem;
+}
+.article-date {
+  width: 90px;
+  height: 90px;
+  top: 0;
+  left: 40px;
+  transform: translateY(-90%);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  margin-bottom: 0;
+  box-shadow: 1px black;
+}
+.article-date p {
+  padding: 0 0.5rem;
+  margin: 0;
+}
+.article h4 {
+  margin: 0;
+}
+.article-detail {
+  margin-top: 1rem;
+  border-top: 0.5px solid black;
+}
+.article-detail p {
+  text-align: center;
+}
+.detail-button {
+  border: 0.5px solid rgb(189, 189, 189);
+  border-radius: 5px;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+.other-props .article-view {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.2rem 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.slider {
+  margin: 0 0 2rem 0;
+}
+.awareness {
+  background-color: rgb(51, 62, 163);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 40vh;
+}
+.awareness .awareness-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  color: white;
+  margin: 2.5rem 2rem;
+  /* padding-top: 2rem; */
+}
+.awareness .awareness-logo h2,
+.awareness .awareness-logo p {
+  margin: 1rem;
+}
+.awareness .awareness-info {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 15px;
+  padding: 0.25rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem 5rem;
+  cursor: pointer;
+}
+.awareness .awareness-info a {
+  padding-bottom: 3px;
+}
+.awareness .awareness-info a span {
+  margin: 0 1rem;
+}
+.awareness .awareness-search {
+  color: white;
+  display: flex;
+  flex-direction: space-between;
+  width: 40%;
+}
+.awareness .awareness-search select {
+  border-radius: 5px;
+  cursor: pointer;
+}
+.awareness-search .search-form {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+.awareness-search .search-form button {
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 1px 5px;
+  cursor: pointer;
+}
+.awareness-search .search-form button:hover {
+  background-color: #cfdfee;
+}
+
+@media only screen and (max-width:768px) {
+  .welcome-message {
+    padding: 0;
+  }
+  .prop-header {
+    padding: 1rem 0;
+  }
+  .house {
+    padding: 2rem 0;
+  }
+  .houses {
+    margin: 1rem 0;
+  }
+  .available-props {
+    border-bottom: 1px solid rgb(113, 113, 113)
+  }
+  .awareness {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .awareness .awareness-info {
+    border-radius: 5px;
+    padding: 0.1rem;
+    width: 15rem;
+    margin-left: 0;
+    margin-right: 2rem;
+  }
+}
