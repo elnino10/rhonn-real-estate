@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import * as AiIcons from "react-icons/ai";
 import { SidebarData } from "./SidebarData";
 import SubMenu from "./SubMenu";
+
+import rhonn from "../assets/images/rhonn-logo.png";
 
 import classes from "./Navbar.module.css";
 
@@ -17,8 +19,8 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-  background: #9dadec;
-  width: 150px;
+  background: #67968e;
+  width: 200px;
   height: 45vh;
   margin-top: 5rem;
   border-bottom-left-radius: 5px;
@@ -36,54 +38,72 @@ const SidebarWrap = styled.div`
 `;
 
 const Navbar = (props) => {
-    const [sidebar, setSidebar] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
 
-    const showSidebar = () => setSidebar(!sidebar);
+  const showSidebar = () => setSidebar(!sidebar);
 
-    return (
-        <nav>
-        <div
-          className={
-            props.onScroll || sidebar
-              ? `${classes.navbar} ${classes["scroll-header"]}`
-              : classes.navbar
-          }
-        >
-          <div className={classes.logo}>
-            <Link to="/">
-              <img src="#" alt="Rhonn" />
-              <h3>Rhonn Real Estate</h3>
-            </Link>
-          </div>
-          <div className={classes["nav-links"]}>
-            <ul>
-              <li><a href="#about-us">About Us</a></li>
-              <li><Link to="/services">Services</Link></li>
-              <li><a href="#property">Available Property</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button className={classes["nav-toggler"]} onClick={showSidebar}>
-              <span className={classes["top-bar"]}></span>
-              <span className={classes["middle-bar"]}></span>
-              <span className={classes["bottom-bar"]}></span>
-              <SidebarNav sidebar={sidebar}>
-                <SidebarWrap>
-                  <NavIcon to="#">
-                    <AiIcons.AiOutlineClose
-                      style={{ color: "white", fontSize: "1rem" }}
-                      onClick={showSidebar}
-                    />
-                  </NavIcon>
-                  {SidebarData.map((item, index) => {
-                    return <SubMenu item={item} key={index} />;
-                  })}
-                </SidebarWrap>
-              </SidebarNav>
-            </button>
-          </div>
+  return (
+    <nav>
+      <div
+        className={
+          props.onScroll || sidebar
+            ? `${classes.navbar} ${classes["scroll-header"]}`
+            : classes.navbar
+        }
+      >
+        <div className={classes.logo}>
+          <Link to="/">
+            <img src={rhonn} alt="Rhonn" />
+            <h3>Rhonn Real Estate</h3>
+          </Link>
         </div>
-      </nav>
-    );
+        <div className={classes["nav-links"]}>
+          <ul>
+            <li>
+              <NavLink
+                to="/about-us"
+                className={({isActive}) => (isActive ? classes.active : "")}
+              >
+                About Us
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/services"
+                className={({isActive}) => (isActive ? classes.active : "")}
+              >
+                Services
+              </NavLink>
+            </li>
+            <li>
+              <a href="#property">Available Property</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+          <button className={classes["nav-toggler"]} onClick={showSidebar}>
+            <span className={classes["top-bar"]}></span>
+            <span className={classes["middle-bar"]}></span>
+            <span className={classes["bottom-bar"]}></span>
+            <SidebarNav sidebar={sidebar}>
+              <SidebarWrap>
+                <NavIcon to="#">
+                  <AiIcons.AiOutlineClose
+                    style={{ color: "white", fontSize: "1rem" }}
+                    onClick={showSidebar}
+                  />
+                </NavIcon>
+                {SidebarData.map((item, index) => {
+                  return <SubMenu item={item} key={index} />;
+                })}
+              </SidebarWrap>
+            </SidebarNav>
+          </button>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;

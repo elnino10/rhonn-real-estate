@@ -1,17 +1,10 @@
 .header {
   width: 100vw;
-  height: 60vh;
-  background: url("../assets/images/background.jpg");
+  height: auto;
+  background: linear-gradient(rgba(27, 152, 131, 0.3), 100%, rgba(0, 0, 0, 0.5) 100%), url("../assets/images/living-room.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-/* .scroll-header {
-  background: rgb(51, 62, 163);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-} */
-
-
 
 .welcome {
   display: flex;
@@ -38,24 +31,49 @@
   font-size: 1.5rem;
   padding: 2rem;
 }
-.welcome-buttons {
+.welcome-form form {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   color: black;
   padding-bottom: 0.5rem;
 }
-.welcome-button {
-  background-color: white;
-  border: 1px solid white;
-  border-radius: 1.5rem;
-  margin: 0 1rem;
-  padding: 0.5rem 2rem;
-  cursor: pointer;
+.welcome-form input {
+  width: auto;
+  height: 3rem;
+  border: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding-left: 10px;
 }
-.welcome-button:hover {
-  background-color: #ccd0e1;
-  border-color: 1px solid #ccd0e1;
+.welcome-form select {
+  width: auto;
+  height: 3rem;
+  padding-left: 5px;
+  border: 0;
+}
+.welcome-form button {
+  background-color: rgb(27, 152, 131);
+  color: white;
+  height: 3rem;
+  width: auto;
+  padding: 0 2rem;
+  border: 1px solid rgb(27, 152, 131);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: 300ms ease-in-out;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+.welcome-form button span {
+  padding-right: 3px;
+}
+.welcome-form button:hover {
+  background-color: rgb(6, 93, 78);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 

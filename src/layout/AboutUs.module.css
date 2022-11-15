@@ -1,4 +1,77 @@
 .about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     width: 100vw;
-    height: 40vh;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0 5rem;
+    height: 30vh;
+}
+
+.welcome h1 {
+    font-weight: normal;
+    font-style: italic;
+}
+
+.goals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 0 5rem;
+    height: 30vh;
+}
+
+.goals div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .about-us {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+    }
+    .welcome {
+        padding: 0 1.5rem;
+    }
+    .welcome h1 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .goals {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+    }
+    .goals div p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 415px) {
+    .about-us {
+        margin: 2rem 0;
+    }
+    .goals, .goals .mission {
+        margin: 2rem 0 0 0;
+    }
 }

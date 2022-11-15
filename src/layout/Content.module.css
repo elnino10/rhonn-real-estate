@@ -1,14 +1,73 @@
-a {
-  text-decoration: none;
-  color: inherit;
+.welcome-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
 }
+.welcome-header h1 {
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+.welcome-header h4 {
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding: 2rem;
+}
+.welcome-form form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: black;
+  padding-bottom: 0.5rem;
+}
+.welcome-form input {
+  width: auto;
+  height: 3rem;
+  border: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding-left: 10px;
+}
+.welcome-form select {
+  width: auto;
+  height: 3rem;
+  padding-left: 5px;
+  border: 0;
+}
+.welcome-form button {
+  background-color: rgb(27, 152, 131);
+  color: white;
+  height: 3rem;
+  width: auto;
+  padding: 0 2rem;
+  border: 1px solid rgb(27, 152, 131);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: 300ms ease-in-out;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+.welcome-form button span {
+  padding-right: 3px;
+}
+.welcome-form button:hover {
+  background-color: rgb(6, 93, 78);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
 .body {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: center;
+  width: 100vw;
 }
-
 .welcome-message {
   display: flex;
   flex-direction: column;
@@ -22,13 +81,18 @@ a {
   padding: 1rem;
 }
 .message-button {
-  background-color: rgb(113, 113, 113);
-  border: 1px solid rgb(113, 113, 113);
+  background-color: #1b9883;
+  border: 1px solid #1b9883;
   color: white;
   border-radius: 1.5rem;
   margin: 0 1rem;
   padding: 0.5rem 3rem;
   cursor: pointer;
+  transition: 300ms ease-in-out;
+}
+
+.message-button:hover {
+  background-color: #065d4e;
 }
 
 .available-props {
@@ -54,9 +118,12 @@ a {
   margin-bottom: 1rem;
 }
 .house {
-  border: 1px solid rgb(189, 189, 189);
   margin: 0.5rem 0.1rem;
-  padding: 1rem 0;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .houses img {
   width: 355px;
@@ -69,8 +136,16 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(189, 189, 189);
+  background-color: rgb(27, 152, 131);
   padding: 0 5rem;
+  height: 5rem;
+  width: 22rem;
+}
+.houses .property-desc div {
+  display: flex;
+}
+.houses .property-desc div span {
+  padding-right: 3px;
 }
 .property-desc h4 {
   margin-bottom: 0;
@@ -80,35 +155,49 @@ a {
 }
 .houses .property-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .houses .property-actions a {
-  padding: 0 2rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid black;
+  /* border-top: 0; */
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 22rem;
 }
-.houses .property-actions p {
-  padding: 0 2rem;
+.houses .property-actions a span {
+  font-size: 20pxrem;
+  padding: 5px 2px 0 0;
 }
 .available-props .property-view {
-  background-color: rgb(83, 137, 218);
-  color: white;
-  border: 1px solid white;
+  background-color: rgb(5, 5, 5);
+  color: #1b9883;
+  border: 3px solid #1b9883;
   border-radius: 5px;
   margin-top: 0;
   margin-bottom: 1.5rem;
   padding: 0.7rem 2.5rem;
+  transition: 300ms ease-in-out;
+  cursor: pointer;
+}
+.available-props .property-view:hover {
+  background-color: #1b9883;
+  color: white;
 }
 .other-props {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(
-      rgba(20, 116, 242, 0.3) 100%,
-      rgba(0, 0, 0, 0.5) 100%
-    ),
+  background: linear-gradient(rgba(5, 5, 5, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%),
     url("../assets/images/living-room.jpg");
-    border-top: 1px solid rgb(113, 113, 113);
-    margin-top: 1rem;
+  border-top: 1px solid rgb(113, 113, 113);
+  border-bottom: 1px solid rgb(113, 113, 113);
+  margin-top: 1rem;
 }
 .other-props h3 {
   color: aliceblue;
@@ -176,11 +265,30 @@ a {
   cursor: pointer;
   margin-bottom: 1rem;
 }
+.fliers {
+  background: linear-gradient(rgba(5, 5, 5, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%),
+    url("../assets/images/living-room.jpg");
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 95vw;
+  height: auto;
+  margin-top: 3rem;
+  margin-left: 2rem;
+  padding: 2rem;
+  border-bottom: 1px solid #1b9883;
+}
+.fliers img {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 30px;
+}
 .slider {
   margin: 0 0 2rem 0;
 }
 .awareness {
-  background-color: rgb(51, 62, 163);
+  background-color: #1b9883;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -195,7 +303,6 @@ a {
   width: 10rem;
   color: white;
   margin: 2.5rem 2rem;
-  /* padding-top: 2rem; */
 }
 .awareness .awareness-logo h2,
 .awareness .awareness-logo p {
@@ -221,7 +328,7 @@ a {
 .awareness .awareness-search {
   color: white;
   display: flex;
-  flex-direction: space-between;
+  justify-content: space-between;
   width: 40%;
 }
 .awareness .awareness-search select {
@@ -242,8 +349,38 @@ a {
 .awareness-search .search-form button:hover {
   background-color: #cfdfee;
 }
+.motto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1b9883;
+  width: 100vw;
+  height: 25vh;
+  padding: 0 10rem;
+}
+.motto div {
+  border: 1px solid #1b9883;
+  border-radius: 5px;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  transition: 500ms ease-in;
+}
+.motto div:hover {
+  transform: translateY(-20%);
+}
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
+  .welcome-header h1 {
+    font-size: 1rem;
+  }
+  .welcome-header h4 {
+    font-size: 0.7rem;
+  }
+  .welcome-button {
+    border-radius: 1rem;
+    margin: 0 0.6rem;
+    padding: 0.5rem 1rem;
+  }
   .welcome-message {
     padding: 0;
   }
@@ -257,7 +394,7 @@ a {
     margin: 1rem 0;
   }
   .available-props {
-    border-bottom: 1px solid rgb(113, 113, 113)
+    border-bottom: 1px solid rgb(113, 113, 113);
   }
   .awareness {
     display: flex;
@@ -271,4 +408,69 @@ a {
     margin-left: 0;
     margin-right: 2rem;
   }
+  .motto {
+    padding: 0 2rem;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .awareness {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding-bottom: 1.5rem;
+  }
+  .awareness-logo {
+    margin: 0;
+  }
+  .awareness-logo h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .awareness .awareness-info {
+    border-radius: 10px;
+    padding: 5px 0;
+    margin: 1rem 0;
+  }
+  .awareness .awareness-search {
+    color: white;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+  }
+  .awareness-search .search-form {
+    display: flex;
+    justify-content: space-between;
+    width: 70vw;
+  }
+  .motto {
+    padding: 0 1rem;
+  }
+  .motto h1 {
+    font-size: medium;
+  }
+  .motto div {
+    border-radius: 3px;
+    padding: 0.5rem 0.3rem;
+    cursor: pointer;
+    transition: 500ms ease-in;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .fliers {
+    margin-left: 10px;
+  }
+  .fliers img {
+    width: 18rem;
+    height: 20rem;
+    border-radius: 20px;
+    padding: 3px 0;
+    margin-top: 0;
+  }
+  
 }

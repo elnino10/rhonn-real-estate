@@ -15,13 +15,13 @@ export const SidebarData = [
     icon: <IoIcons.IoIosPaper />,
   },
   {
-    title: "Events",
+    title: "Properties",
     path: "/events",
     icon: <FaIcons.FaEnvelopeOpenText />,
   },
   {
     title: "Contact",
-    path: "/contact",
+    path: "#contact",
     icon: <FaIcons.FaPhone />,
   },
 ];
