@@ -1,9 +1,12 @@
 import React from "react";
 
 import classes from "./AboutUs.module.css";
-import Header from "./Header";
+import Header from "../components/Header";
 
 const AboutUs = () => {
+
+  window.scrollTo(0, 0)
+  
   const aboutUs = (
     <div
       style={{

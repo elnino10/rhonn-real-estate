@@ -1,0 +1,82 @@
+.house {
+  margin: 0.5rem 0.1rem;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.house img {
+  width: 355px;
+  height: 400px;
+  object-fit: cover;
+  margin: 0;
+  cursor: pointer;
+}
+.house .property-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(27, 152, 131);
+  padding: 0 5rem;
+  height: 5rem;
+  width: 25rem;
+}
+.house .property-desc div {
+  display: flex;
+}
+.house .property-desc div span {
+  padding-right: 3px;
+}
+.property-desc h4 {
+  margin-bottom: 0;
+}
+.property-desc p {
+  margin-top: 0;
+}
+.house .property-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.house .property-actions a {
+  margin-top: 0.5rem;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid black;
+  /* border-top: 0; */
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 22rem;
+}
+.house .property-actions a span {
+  font-size: 20pxrem;
+  padding: 5px 2px 0 0;
+}
+.available-props .property-view {
+  background-color: rgb(5, 5, 5);
+  color: #1b9883;
+  border: 3px solid #1b9883;
+  border-radius: 5px;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  padding: 0.7rem 2.5rem;
+  transition: 300ms ease-in-out;
+  cursor: pointer;
+}
+.available-props .property-view:hover {
+  background-color: #1b9883;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .house {
+    padding: 2rem 0;
+  }
+  .available-props {
+    border-bottom: 1px solid rgb(113, 113, 113);
+  }
+}

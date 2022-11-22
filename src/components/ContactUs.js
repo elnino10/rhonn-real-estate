@@ -10,8 +10,9 @@ import {
   AiOutlinePhone,
   AiOutlineTwitter,
 } from "react-icons/ai";
-import { FaLocationArrow, FaTiktok } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
+import { CiLocationOn } from "react-icons/ci";
 
 const ContactUs = () => {
   return (
@@ -43,7 +44,7 @@ const ContactUs = () => {
           </div>
           <div className={classes.address}>
             <div>
-              <FaLocationArrow />
+              <CiLocationOn />
             </div>
             <div>
               <p>No.1 lorem ipsum</p>

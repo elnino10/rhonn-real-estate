@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 import * as AiIcons from "react-icons/ai";
-import { SidebarData } from "./SidebarData";
+import { SidebarData } from "../data/SidebarData";
 import SubMenu from "./SubMenu";
 
 import rhonn from "../assets/images/rhonn-logo.png";
@@ -76,7 +76,7 @@ const Navbar = (props) => {
               </NavLink>
             </li>
             <li>
-              <a href="#property">Available Property</a>
+              <NavLink to="/properties_on-listing">On Listing</NavLink>
             </li>
             <li>
               <a href="#contact">Contact</a>

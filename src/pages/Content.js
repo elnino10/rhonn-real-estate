@@ -1,21 +1,15 @@
 import React from "react";
-
 import $ from "jquery";
 
-import Header from "./Header";
-import ImageSlider from "./ImageSlider";
-import images from "./Images";
-
+import Header from "../components/Header";
+import AllProps from "../components/AllProps";
+import ImageSlider from "../data/ImageSlider";
+import images from "../data/Images";
 import rhonn1 from "../assets/images/rhonn1.jpg";
 import rhonn2 from "../assets/images/rhonn2.jpg";
 import rhonn3 from "../assets/images/rhonn3.jpg";
 import rhonn4 from "../assets/images/rhonn4.jpg";
-import rhonnImg1 from "../assets/images/rhonn-img1.jpg";
-import rhonnImg2 from "../assets/images/rhonn-img2.jpg";
-import rhonnImg3 from "../assets/images/rhonn-img3.jpg";
-import rhonnImg4 from "../assets/images/rhonn-img4.jpg";
-import { AiOutlineContacts, AiOutlineSearch } from "react-icons/ai";
-import { CiLocationOn } from "react-icons/ci";
+import { AiOutlineSearch } from "react-icons/ai";
 import classes from "./Content.module.css";
 
 const Content = () => {
@@ -27,37 +21,34 @@ const Content = () => {
       </div>
       <div className={classes["welcome-form"]}>
         <form>
-          <input placeholder="Search by state" />
           <select>
-            <option>any category</option>
-            <option>for sale</option>
-            <option>for rent</option>
+            <option>Search by state</option>
+            <option>Lagos state</option>
+            <option>Enugu state</option>
+            <option>Anambra state</option>
+            <option>Ebonyi state</option>
           </select>
           <select>
-            <option>all types</option>
-            <option>shop</option>
-            <option>flats and apartments</option>
+            <option>Category</option>
             <option>lands</option>
-            <option>houses</option>
+            <option>fully-detached</option>
+            <option>semi-detached</option>
+            <option>terrace</option>
             <option>comercial Properties</option>
-          </select>
-          <select>
-            <option>1 bedroom</option>
-            <option>2 bedroom</option>
-            <option>3 bedroom</option>
-            <option>4 bedroom</option>
-            <option>5 bedroom</option>
+            <option>others</option>
           </select>
           <button>
             <span>
               <AiOutlineSearch />
             </span>{" "}
-            find
+            find property
           </button>
         </form>
       </div>
     </div>
   );
+
+  window.scrollTo(0, 0)
 
   if (window.location.hash !== "" && window.location.hash !== "#") {
     let target = window.location.hash;
@@ -90,96 +81,7 @@ const Content = () => {
           <div className={classes["prop-header"]}>
             <h4>Available Properties</h4>
           </div>
-          <div className={classes.houses}>
-            <div className={classes.house}>
-              <div className={classes.property}>
-                <img src={rhonnImg1} alt="pic" />
-              </div>
-              <div className={classes["property-desc"]}>
-                <h4>House specifications</h4>
-                <div>
-                  <span>
-                    <CiLocationOn />
-                  </span>
-                  <p>Lorem ipsum dolor sit amet</p>
-                </div>
-              </div>
-              <div className={classes["property-actions"]}>
-                <a href="#">
-                  <span>
-                    <AiOutlineContacts />
-                  </span>
-                  View
-                </a>
-              </div>
-            </div>
-            <div className={classes.house}>
-              <div className={classes.property}>
-                <img src={rhonnImg2} alt="pic" />
-              </div>
-              <div className={classes["property-desc"]}>
-                <h4>House specifications</h4>
-                <div>
-                  <span>
-                    <CiLocationOn />
-                  </span>
-                  <p>Lorem ipsum dolor sit amet</p>
-                </div>
-              </div>
-              <div className={classes["property-actions"]}>
-                <a href="#">
-                  <span>
-                    <AiOutlineContacts />
-                  </span>
-                  View
-                </a>
-              </div>
-            </div>
-            <div className={classes.house}>
-              <div className={classes.property}>
-                <img src={rhonnImg3} alt="pic" />
-              </div>
-              <div className={classes["property-desc"]}>
-                <h4>House specifications</h4>
-                <div>
-                  <span>
-                    <CiLocationOn />
-                  </span>
-                  <p>Lorem ipsum dolor sit amet</p>
-                </div>
-              </div>
-              <div className={classes["property-actions"]}>
-                <a href="#">
-                  <span>
-                    <AiOutlineContacts />
-                  </span>
-                  View
-                </a>
-              </div>
-            </div>
-            <div className={classes.house}>
-              <div className={classes.property}>
-                <img src={rhonnImg4} alt="pic" />
-              </div>
-              <div className={classes["property-desc"]}>
-                <h4>House specifications</h4>
-                <div>
-                  <span>
-                    <CiLocationOn />
-                  </span>
-                  <p>Lorem ipsum dolor sit amet</p>
-                </div>
-              </div>
-              <div className={classes["property-actions"]}>
-                <a href="#">
-                  <span>
-                    <AiOutlineContacts />
-                  </span>
-                  View
-                </a>
-              </div>
-            </div>
-          </div>
+          <AllProps />
           <div className={classes["property-view"]}>
             <a>View More</a>
           </div>

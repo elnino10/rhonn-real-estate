@@ -1,7 +1,12 @@
 .header {
   width: 100vw;
   height: auto;
-  background: linear-gradient(rgba(27, 152, 131, 0.3), 100%, rgba(0, 0, 0, 0.5) 100%), url("../assets/images/living-room.jpg");
+  background: linear-gradient(
+      rgba(27, 152, 131, 0.3),
+      100%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url("../assets/images/living-room.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -78,18 +83,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-  /* .nav-links ul {
-    display: none;
-  }
-  .navbar .logo a h3 {
-    display: none;
-  }
-  .navbar .logo a img {
-    display: inline-block;
-  }
-  .nav-links .nav-toggler {
-    display: flex;
-  } */
   .welcome-header h1 {
     font-size: 1rem;
   }
@@ -102,24 +95,3 @@
     padding: 0.5rem 1rem;
   }
 }
-
-/* @media only screen and (min-width: 769px) and (max-width: 912px) {
-  .navbar {
-    padding: 0;
-  }
-  .nav-links .nav-toggler {
-    display: none;
-  }
-  .navbar .logo a img {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 915px){
-  .nav-links .nav-toggler {
-    display: none;
-  }
-  .navbar .logo a img {
-    display: none;
-  }
-} */

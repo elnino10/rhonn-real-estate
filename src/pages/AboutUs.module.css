@@ -20,6 +20,11 @@
 .welcome h1 {
     font-weight: normal;
     font-style: italic;
+    text-align: center;
+}
+
+.welcome p, .goals div p {
+    text-align: center;
 }
 
 .goals {
