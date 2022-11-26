@@ -1,5 +1,5 @@
-import React from "react";
-import $ from "jquery";
+import React, { useState } from "react";
+// import $ from "jquery";
 
 import Header from "../components/Header";
 import AllProps from "../components/AllProps";
@@ -11,8 +11,33 @@ import rhonn3 from "../assets/images/rhonn3.jpg";
 import rhonn4 from "../assets/images/rhonn4.jpg";
 import { AiOutlineSearch } from "react-icons/ai";
 import classes from "./Content.module.css";
+import { Link, useNavigate } from "react-router-dom";
 
-const Content = () => {
+const Content = (props) => {
+  const [state, setState] = useState();
+  const [category, setCategory] = useState();
+  const navigate = useNavigate();
+
+  const stateSelectHandler = (e) => {
+    if (!state) return;
+    setState(e.target.value);
+  };
+
+  const categorySelectHandler = (e) => {
+    if (!category) return;
+    setCategory(e.target.value);
+  };
+
+  const submitFilteredProp = (e) => {
+    e.preventDefault();
+
+    if (state !== "search" && category !== "category") {
+      props.filteredProp(state, category)
+      console.log(state, category);
+      navigate("/properties_on-listing")
+    }
+  };
+
   const headerContent = (
     <div className={classes.body}>
       <div className={classes["welcome-header"]}>
@@ -20,24 +45,24 @@ const Content = () => {
         <h4>lorem ipsum</h4>
       </div>
       <div className={classes["welcome-form"]}>
-        <form>
-          <select>
+        <form onSubmit={submitFilteredProp}>
+          <select onChange={stateSelectHandler}>
             <option>Search by state</option>
             <option>Lagos state</option>
             <option>Enugu state</option>
             <option>Anambra state</option>
             <option>Ebonyi state</option>
           </select>
-          <select>
+          <select onChange={categorySelectHandler}>
             <option>Category</option>
-            <option>lands</option>
+            <option>land</option>
             <option>fully-detached</option>
             <option>semi-detached</option>
             <option>terrace</option>
-            <option>comercial Properties</option>
+            <option>commercial properties</option>
             <option>others</option>
           </select>
-          <button>
+          <button type="submit">
             <span>
               <AiOutlineSearch />
             </span>{" "}
@@ -48,17 +73,17 @@ const Content = () => {
     </div>
   );
 
-  window.scrollTo(0, 0)
+  window.scrollTo(0, 0);
 
-  if (window.location.hash !== "" && window.location.hash !== "#") {
-    let target = window.location.hash;
-    if ($(target).length) {
-      return;
-    }
-    $("html, body").animate({
-      scrollTop: $(target).offset().top,
-    });
-  }
+  // if (window.location.hash !== "" && window.location.hash !== "#") {
+  //   let target = window.location.hash;
+  //   if ($(target).length) {
+  //     return;
+  //   }
+  //   $("html, body").animate({
+  //     scrollTop: $(target).offset().top,
+  //   });
+  // }
 
   return (
     <>
@@ -82,9 +107,6 @@ const Content = () => {
             <h4>Available Properties</h4>
           </div>
           <AllProps />
-          <div className={classes["property-view"]}>
-            <a>View More</a>
-          </div>
         </div>
         <div className={classes["other-props"]}>
           <h3>Other Properties</h3>
@@ -102,9 +124,9 @@ const Content = () => {
                     do eiusmod tempor incididunt ut labore
                   </p>
                 </div>
-                <div className={classes["detail-button"]}>
+                {/* <div className={classes["detail-button"]}>
                   <a>Details</a>
-                </div>
+                </div> */}
               </div>
             </article>
             <article>
@@ -120,9 +142,9 @@ const Content = () => {
                     do eiusmod tempor incididunt ut labore
                   </p>
                 </div>
-                <div className={classes["detail-button"]}>
+                {/* <div className={classes["detail-button"]}>
                   <a>Details</a>
-                </div>
+                </div> */}
               </div>
             </article>
             <article>
@@ -138,14 +160,14 @@ const Content = () => {
                     do eiusmod tempor incididunt ut labore
                   </p>
                 </div>
-                <div className={classes["detail-button"]}>
+                {/* <div className={classes["detail-button"]}>
                   <a>Details</a>
-                </div>
+                </div> */}
               </div>
             </article>
           </div>
           <div className={classes["article-view"]}>
-            <a>View More</a>
+            <Link to="#">View More</Link>
           </div>
         </div>
         <div className={classes.fliers}>
@@ -163,9 +185,9 @@ const Content = () => {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
           </div>
           <div className={classes["awareness-info"]}>
-            <a>
+            <Link>
               <span>&#10148;</span>more information
-            </a>
+            </Link>
           </div>
           <div className={classes["awareness-search"]}>
             <form className={classes["search-form"]}>

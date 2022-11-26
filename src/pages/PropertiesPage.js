@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 
@@ -7,6 +7,15 @@ import PropsData from "../data/PropsData";
 import classes from "./PropertiesPage.module.css";
 
 const PropertiesPage = () => {
+  useEffect(() => {
+    const fetchProps = (state, category) => async (req, res) => {
+      const response = await fetch(
+        `http://127.0.0.1:5000/?state=${state}&category=${category}`
+      )
+      const data = response.data
+    }
+  }, []);
+
   const propHeader = (
     <div
       style={{
@@ -24,23 +33,33 @@ const PropertiesPage = () => {
   return (
     <div>
       <Header headerMsg={propHeader} />
-      {PropsData.map((property) => (
-        <div className={classes.content}>
-          <div className={classes.image}>
-            <Link to={`/props/${property.id}`}><img src={property.image} alt={`${property.name}-pic`} /></Link>
-            <p>#50,000.00</p>
+      <div className={classes.section}>
+        {PropsData.map((property) => (
+          <div key={property.id} className={classes.content}>
+            <div className={classes.image}>
+              <Link to={`/props/${property.id}`}>
+                <img src={property.image} alt={`${property.name}-pic`} />
+              </Link>
+              <p>{`${property.price}M`}</p>
+            </div>
+            <div className={classes.description}>
+              <h3>{property.name}</h3>
+              <p>
+                <span>Price:</span>
+                {` ${property.price}M`}
+              </p>
+              <p><span>Title:</span>{` ${property.title}`}</p>
+              <h4>Description</h4>
+              <p>{property.description}</p>
+              <h4>Location</h4>
+              <p>{property.location}</p>
+              <div className={classes.button}>
+                <Link to={`/props/${property.id}`}>View Details</Link>
+              </div>
+            </div>
           </div>
-          <div className={classes.description}>
-            <h3>{property.name}</h3>
-            <p><span>Price:</span>{` $${property.price}`}</p>
-            <h4>Description</h4>
-            <p>{property.description}</p>
-            <h4>Location</h4>
-            <p>{property.location}</p>
-            <div className={classes.button}><Link to={`/props/${property.id}`}>View Details</Link></div>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

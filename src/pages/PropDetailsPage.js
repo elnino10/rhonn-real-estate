@@ -89,6 +89,14 @@ const PropDetailsPage = () => {
                 <p>{property.featureDesc}</p>
               </div>
               <div>
+                <h4>Price</h4>
+                <p>{`${property.price}M`}</p>
+              </div>
+              <div>
+                <h4>Title</h4>
+                <p>{property.title}</p>
+              </div>
+              <div>
                 <h4>Contact Us</h4>
                 <p>Call on: 080*******</p>
                 <p>WhatsApp on: 080*******</p>

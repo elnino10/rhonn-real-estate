@@ -15,8 +15,8 @@ export const SidebarData = [
     icon: <IoIcons.IoIosPaper />,
   },
   {
-    title: "Properties",
-    path: "/events",
+    title: "On Listing",
+    path: "/properties_on-listing",
     icon: <FaIcons.FaEnvelopeOpenText />,
   },
   {
