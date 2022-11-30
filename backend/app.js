@@ -9,17 +9,17 @@ import PropertyRoute from "./routes/PropertyRoute.js";
 
 dotenv.config();
 
-const mongodbUrl = config.MONGODB_URL;
+// const mongodbUrl = config.MONGODB_URL;
 
-mongoose
-  .connect(mongodbUrl, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("db connected...");
-  })
-  .catch((error) => console.log(error));
+// mongoose
+//   .connect(mongodbUrl, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => {
+//     console.log("db connected...");
+//   })
+//   .catch((error) => console.log(error));
 
 const app = express();
 app.use(bodyParser.json());

@@ -1,16 +1,26 @@
 import express from "express";
 import Property from "../models/PropertyModel.js";
 import PropsData from "../data/PropsData.js";
+
 const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    // const queryObj = {...req.query};
-    // let properties;
-    // if (req.query) {
-    //   properties = await Property.find(queryObj);
-    // }
-    res.json(PropsData);
+    // const {state, category} = req.query;
+
+    // const keys = ["state", "category"]
+    // const search = (data) => {
+    //   return data.filter(item => {
+    //     keys.forEach(key => item[key].includes(state) && item[keys].includes(category))
+      // })
+  // }
+  // console.log(req.query);
+
+    res.json({
+      status: "success",
+      results: PropsData.length,
+      data: PropsData
+    });
   } catch (error) {
     console.log(error);
     res.send("Not Found");
