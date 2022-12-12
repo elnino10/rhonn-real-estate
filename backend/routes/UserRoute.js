@@ -5,7 +5,8 @@ const router = express.Router();
 
 export const postMessage = router.post("/post-message", async (req, res) => {
   try {
-    const { name, email, phone, message } = req.body;
+    const { name, email, phone, message } = req.body;   
+
     const userPost = await User.create({
       name,
       email,

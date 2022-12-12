@@ -5,8 +5,14 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const PropsData = await Property.find();
+    const { state, category } = req.query;
 
+    let PropsData;
+    if (req.query) {
+      PropsData = await Property.find(state, category );
+    }
+    PropsData = await Property.find();
+    console.log(req.query);
     res.json({
       status: "success",
       results: PropsData.length,

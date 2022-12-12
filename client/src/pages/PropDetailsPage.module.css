@@ -108,6 +108,11 @@
 .form form button:hover {
   background-color: #0b5549;
 }
+.form form button:disabled {
+  background-color: #ccc;
+  cursor:no-drop;
+  color: #000
+}
 
 @media only screen and (max-width: 416px) {
   .details {

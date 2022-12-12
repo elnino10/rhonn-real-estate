@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-// import $ from "jquery";
 import Header from "../components/Header";
 import AllProps from "../components/AllProps";
 import ImageSlider from "../data/ImageSlider";
@@ -13,23 +12,35 @@ import rhonn4 from "../assets/images/rhonn4.jpg";
 import { AiOutlineSearch } from "react-icons/ai";
 import classes from "./Content.module.css";
 
-const Content = () => {
+const Content = (props) => {
   const [state, setState] = useState("");
   const [category, setCategory] = useState("");
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await axios.get("http://127.0.0.1:5000/api/properties/");
-      if (res) setData(res.data.data);
-    };
-    fetchData();
+    try {
+      const fetchData = async () => {
+        const res = await axios.get("http://127.0.0.1:5000/api/properties/");
+        if (res) {
+          setData(res.data.data);
+          setLoading(false);
+        }
+      };
+      fetchData();
+    } catch (error) {
+      setError(true);
+      setLoading(false);
+      console.log(error);
+    }
   }, []);
-  
+
   const stateSelectHandler = (e) => {
     const value = e.target.value;
-    setState(value);
+    const stateVal = value.toLowerCase();
+    setState(stateVal);
   };
 
   const categorySelectHandler = (e) => {
@@ -40,8 +51,9 @@ const Content = () => {
   const submitFilteredProp = (e) => {
     e.preventDefault();
     if (state && category) {
-      navigate("/properties_on-listing");
+      navigate(`/properties_on-listing/?state=${state}&category=${category}`);
     }
+    props.onSubmitFilter = (state, category);
   };
 
   const headerContent = (
@@ -81,15 +93,7 @@ const Content = () => {
 
   window.scrollTo(0, 0);
 
-  // if (window.location.hash !== "" && window.location.hash !== "#") {
-  //   let target = window.location.hash;
-  //   if ($(target).length) {
-  //     return;
-  //   }
-  //   $("html, body").animate({
-  //     scrollTop: $(target).offset().top,
-  //   });
-  // }
+  if (error) return <h3>Oops Something Went Wrong!</h3>;
 
   return (
     <>
@@ -112,7 +116,11 @@ const Content = () => {
           <div className={classes["prop-header"]}>
             <h4>Available Properties</h4>
           </div>
-          <AllProps data={data} state={state} category={category} />
+          {loading ? (
+            <p>LOADING...</p>
+          ) : (
+            <AllProps data={data} state={state} category={category} />
+          )}
         </div>
         <div className={classes["other-props"]}>
           <h3>Other Properties</h3>
@@ -130,9 +138,6 @@ const Content = () => {
                     do eiusmod tempor incididunt ut labore
                   </p>
                 </div>
-                {/* <div className={classes["detail-button"]}>
-                  <a>Details</a>
-                </div> */}
               </div>
             </article>
             <article>
@@ -148,9 +153,6 @@ const Content = () => {
                     do eiusmod tempor incididunt ut labore
                   </p>
                 </div>
-                {/* <div className={classes["detail-button"]}>
-                  <a>Details</a>
-                </div> */}
               </div>
             </article>
             <article>
@@ -166,9 +168,6 @@ const Content = () => {
                     do eiusmod tempor incididunt ut labore
                   </p>
                 </div>
-                {/* <div className={classes["detail-button"]}>
-                  <a>Details</a>
-                </div> */}
               </div>
             </article>
           </div>
