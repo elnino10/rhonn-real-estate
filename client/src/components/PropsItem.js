@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { AiOutlineContacts } from "react-icons/ai";
 import { CiLocationOn } from "react-icons/ci";
 import { Link } from "react-router-dom";
@@ -7,20 +6,7 @@ import { Link } from "react-router-dom";
 import classes from "./PropsItem.module.css";
 
 const PropsItem = (props) => {
-  // const [data, setData] = useState();
-  // const { state, category } = props;
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const res = await axios.get(
-  //       `http://127.0.0.1:5000/?state=${state}&category=${category}`
-  //     );
-  //     setData(res.data);
-  //   };
-  //   fetchData();
-  // }, [state, category]);
-  console.log(props.image);
-
+ 
   return (
     <li key={props.id} className={classes.house}>
       <div className={classes.property}>

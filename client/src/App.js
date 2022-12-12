@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Content from "./pages/Content";
@@ -8,7 +8,7 @@ import Services from "./pages/Services";
 import PropDetailsPage from "./pages/PropDetailsPage";
 import PropertiesPage from "./pages/PropertiesPage";
 
-function App() {
+function App () {
 
   return (
     <>

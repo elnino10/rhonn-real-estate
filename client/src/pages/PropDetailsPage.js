@@ -1,20 +1,38 @@
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
+import Header from "../components/Header";
+import { CiLocationOn } from "react-icons/ci";
 import classes from "./PropDetailsPage.module.css";
 
-import PropsData from "../data/PropsData";
-import { useParams } from "react-router-dom";
-import { CiLocationOn } from "react-icons/ci";
-
 const PropDetailsPage = () => {
+  const [loading, setLoading] = useState(true)
+  const [property, setProperty] = useState({});
+  const [error, setError] = useState(false)
   const [image, setImage] = useState(null);
   const [imageClicked, setImageClicked] = useState(false);
   const params = useParams();
 
-  const property = PropsData.find((item) => item.id === params.itemId);
-
-  console.log(property);
+  useEffect(() => {
+    try {
+      const fetchData = async () => {
+        const res = await axios.get(
+          `http://127.0.0.1:5000/api/properties/${params.itemId}`
+        );
+        if (res.data) {
+          setProperty(res.data.data.property);
+          setLoading(false);
+        } 
+        console.log(res.data.data.property);
+      };
+      fetchData();
+    } catch (error) {
+      setError(true)
+      console.log(error);
+    }
+    
+  }, [params.itemId]);
 
   const viewImageHandler = (id) => {
     if (image !== null) {
@@ -28,8 +46,6 @@ const PropDetailsPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  
 
   const details = (
     <div
@@ -46,6 +62,8 @@ const PropDetailsPage = () => {
     </div>
   );
 
+  if (error) return <h3>Ooops Something Went Wrong!</h3>
+
   return (
     <>
       <Header headerMsg={details} />
@@ -61,7 +79,7 @@ const PropDetailsPage = () => {
           </p>
         </div>
         <div className={classes.section}>
-          <div className={classes["prop-details"]}>
+          {loading ? <p>LOADING...</p> : <div className={classes["prop-details"]}>
             <div className={classes.images}>
               <div className={classes["top-image"]}>
                 <img
@@ -71,7 +89,7 @@ const PropDetailsPage = () => {
               </div>
               <div className={classes["sub-images"]}>
                 <ul>
-                  {property.images.map((img) => (
+                  {property && property.images.map((img) => (
                     <li key={img.id}>
                       <img
                         src={img.view}
@@ -104,13 +122,13 @@ const PropDetailsPage = () => {
               <div>
                 <h4>Features</h4>
                 <ul>
-                  {property.features.map((el) => (
-                    <li key={el.id}>{el.feat}</li>
+                  {property && property.features.map((el) => (
+                    <li key={el}>{el}</li>
                   ))}
                 </ul>
               </div>
             </div>
-          </div>
+          </div>}
           <div className={classes.form}>
             <h4>Drop A message</h4>
             <form>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 // import $ from "jquery";
-
 import Header from "../components/Header";
 import AllProps from "../components/AllProps";
 import ImageSlider from "../data/ImageSlider";
@@ -12,25 +12,21 @@ import rhonn3 from "../assets/images/rhonn3.jpg";
 import rhonn4 from "../assets/images/rhonn4.jpg";
 import { AiOutlineSearch } from "react-icons/ai";
 import classes from "./Content.module.css";
-import { Link, useNavigate } from "react-router-dom";
-
-// import PropsData from "../data/PropsData";
 
 const Content = () => {
   const [state, setState] = useState("");
   const [category, setCategory] = useState("");
-  const [data, setData] = useState([])
-  const navigate = useNavigate()
+  const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get("http://127.0.0.1:5000/api/properties/")
-      if (res) setData(res.data.data)
-      // console.log(res.data.data)
-    }
-    fetchData()
+      const res = await axios.get("http://127.0.0.1:5000/api/properties/");
+      if (res) setData(res.data.data);
+    };
+    fetchData();
   }, []);
-
+  
   const stateSelectHandler = (e) => {
     const value = e.target.value;
     setState(value);
@@ -44,7 +40,7 @@ const Content = () => {
   const submitFilteredProp = (e) => {
     e.preventDefault();
     if (state && category) {
-      navigate("/properties_on-listing")
+      navigate("/properties_on-listing");
     }
   };
 

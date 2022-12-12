@@ -6,14 +6,12 @@ import classes from "./AvailablePropsList.module.css";
 const AvailablePropsList = (props) => {
   const { state, category, houses } = props;
 
-  // console.log(houses[0].image)
-
   return (
     <ul className={classes.houses}>
       {houses.map((item) => (
         <PropsItem
-          key={item.id}
-          id={item.id}
+          key={item._id}
+          id={item._id}
           name={item.name}
           image={item.image}
           images={item.images}
