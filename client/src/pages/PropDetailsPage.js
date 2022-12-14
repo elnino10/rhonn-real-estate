@@ -16,7 +16,9 @@ const PropDetailsPage = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [propertyId, setPropertyId] = useState("");
   const [messageSent, setMessageSent] = useState(false);
+  const [response, setResponse] = useState("");
   const params = useParams();
 
   useEffect(() => {
@@ -24,10 +26,11 @@ const PropDetailsPage = () => {
       const fetchData = async () => {
         const res = await axios.get(
           `http://127.0.0.1:5000/api/properties/${params.itemId}`
-        );
-        if (res.data) {
-          setProperty(res.data.data.property);
-          setLoading(false);
+          );
+          if (res.data) {
+            setProperty(res.data.data.property);
+            setLoading(false);
+            setPropertyId(params.itemId);
         }
       };
       fetchData();
@@ -51,28 +54,28 @@ const PropDetailsPage = () => {
     setImage(viewImage.view);
   };
 
-  const nameHandler = (e) =>{
+  const nameHandler = (e) => {
     setName(e.target.value);
-    setMessageSent(false)
-  } 
+    setMessageSent(false);
+  };
   const emailHandler = (e) => {
     setEmail(e.target.value);
-    setMessageSent(false)
-  } 
+    setMessageSent(false);
+  };
   const messageHandler = (e) => {
     setMessage(e.target.value);
-    setMessageSent(false)
-  }
+    setMessageSent(false);
+  };
   const phoneHandler = (e) => {
     setPhone(e.target.value);
-    setMessageSent(false)
-  }
+    setMessageSent(false);
+  };
 
-  
-    const formIsValid = name.trim().length > 1 &&
+  const formIsValid =
+    name.trim().length > 1 &&
     message.trim().length > 1 &&
-    phone.length > 3 && email 
-  
+    phone.length > 3 &&
+    email;
 
   const messageSubmitHandler = (e) => {
     e.preventDefault();
@@ -85,9 +88,14 @@ const PropDetailsPage = () => {
           email,
           phone,
           message,
+          propertyId,
         }
       );
-      if(res.data) setMessageSent(true)
+      if (res.data) {
+        setMessageSent(true);
+        setResponse(res.data.status)
+        console.log(res.data.message);
+      }
     };
     sendMessage();
     setName("");
@@ -112,6 +120,8 @@ const PropDetailsPage = () => {
   );
 
   if (error) return <h3>Ooops Something Went Wrong!</h3>;
+  let msgColor = "#1b9883"
+  if (response.includes('not')) msgColor = "#fc1703"
 
   return (
     <>
@@ -203,9 +213,13 @@ const PropDetailsPage = () => {
               <label htmlFor="phone number">Phone Number</label>
               <input type="number" value={phone} onChange={phoneHandler} />
               <br></br>
-              {messageSent ? <p style={{color: "#1b9883"}}>Message Sent Successfully!</p> : <button type="submit" disabled={!formIsValid ? true : ""}>
-                Submit
-              </button>}
+              {messageSent ? (
+                <p style={{ color: msgColor }}>{response}</p>
+              ) : (
+                <button type="submit" disabled={!formIsValid ? true : ""}>
+                  Submit
+                </button>
+              )}
             </form>
           </div>
         </div>

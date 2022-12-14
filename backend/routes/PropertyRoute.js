@@ -5,18 +5,22 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const { state, category } = req.query;
+    const queryObj = { ...req.query };
 
-    let PropsData;
-    if (req.query) {
-      PropsData = await Property.find(state, category );
+    const propsData = await Property.find(queryObj);
+
+    if (propsData.length === 0) {
+      res.json({
+        status: "success",
+        message: "Search result not found!",
+      });
+      return;
     }
-    PropsData = await Property.find();
-    console.log(req.query);
+
     res.json({
       status: "success",
-      results: PropsData.length,
-      data: PropsData,
+      results: propsData.length,
+      data: propsData,
     });
   } catch (error) {
     console.log(error);

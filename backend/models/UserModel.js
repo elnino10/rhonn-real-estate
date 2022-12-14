@@ -5,6 +5,7 @@ const userSchema = new mongoose.Schema({
   email: String,
   phone: Number,
   message: String,
+  propertyId: {type: mongoose.Schema.ObjectId, ref: "Property"}  
 });
 
 const userModel = mongoose.model("User", userSchema);

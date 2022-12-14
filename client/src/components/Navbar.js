@@ -76,7 +76,7 @@ const Navbar = (props) => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/properties_on-listing">On Listing</NavLink>
+              <a href="/properties_on-listing">On Listing</a>
             </li>
             <li>
               <a href="#contact">Contact</a>

@@ -9,16 +9,15 @@ import PropDetailsPage from "./pages/PropDetailsPage";
 import PropertiesPage from "./pages/PropertiesPage";
 
 function App() {
-  const [state, setState] = useState("");
-  const [category, setCategory] = useState("");
+  const [stateVal, setStateVal] = useState("");
+  const [categoryVal, setCategoryVal] = useState("");
 
-  console.log(state, category);
-  const submitFilterHandler = (state, category) => {
-    setState(state);
-    setCategory(category);
+  const submitFilterHandler = ({state, category}) => {
+    setStateVal(state);
+    setCategoryVal(category);
   };
-
-  return (
+  
+  return ( 
     <>
       <Routes>
         <Route
@@ -30,7 +29,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route
           path="/properties_on-listing"
-          element={<PropertiesPage state={state} category={category} />}
+          element={<PropertiesPage state={stateVal} category={categoryVal} />}
         />
       </Routes>
       <ContactUs />

@@ -11,23 +11,26 @@ const PropertiesPage = (props) => {
   const [error, setError] = useState(false);
   const { state, category } = props;
 
-  console.log(state, category);
-
-  // useEffect(() => {
-  //   try {
-  //     const fetchData = async () => {
-  //       const res = await axios.get(
-  //         `http://127.0.0.1:5000/api/properties/?state=${state}&category=${category}`
-  //       );
-  //       if (res) setPropsData(res.data.data);
-  //       setLoading(false);
-  //     };
-  //     fetchData();
-  //   } catch (error) {
-  //     setError(true);
-  //     console.log(error);
-  //   }
-  // }, [state, category]);
+  useEffect(() => {
+    try {
+      const fetchData = async () => {
+        let query;
+        if (!state && !category) query = ""
+        if (!state && category) query = `?category=${category}`
+        if (state && !category) query = `?state=${state}`
+        if (state && category) query = `?state=${state}&category=${category}`
+        const res = await axios.get(
+          `http://127.0.0.1:5000/api/properties/${query}`
+        );
+        if (res) setPropsData(res.data.data);
+        setLoading(false);
+      };
+      fetchData();
+    } catch (error) {
+      setError(true);
+      console.log(error);
+    }
+  }, [state, category]);
 
   const propHeader = (
     <div

@@ -37,6 +37,10 @@ const Content = (props) => {
     }
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const stateSelectHandler = (e) => {
     const value = e.target.value;
     const stateVal = value.toLowerCase();
@@ -50,10 +54,15 @@ const Content = (props) => {
 
   const submitFilteredProp = (e) => {
     e.preventDefault();
-    if (state && category) {
-      navigate(`/properties_on-listing/?state=${state}&category=${category}`);
-    }
-    props.onSubmitFilter = (state, category);
+    let query = "";
+    if (state && !category) query = `?state=${state}`;
+    if (category && !state) query = `?category=${category}`;
+    if (state && category) query = `?state=${state}&category=${category}`;
+    navigate(`/properties_on-listing/${query}`);
+
+    props.onSubmitFilter({ state, category });
+    setState("");
+    setCategory("");
   };
 
   const headerContent = (
@@ -90,8 +99,6 @@ const Content = (props) => {
       </div>
     </div>
   );
-
-  window.scrollTo(0, 0);
 
   if (error) return <h3>Oops Something Went Wrong!</h3>;
 
@@ -195,15 +202,19 @@ const Content = (props) => {
             </Link>
           </div>
           <div className={classes["awareness-search"]}>
-            <form className={classes["search-form"]}>
-              <p>search by state</p>
-              <select>
-                <option>Lagos</option>
-                <option>Anambra</option>
-                <option>Delta</option>
-                <option>Ebonyi</option>
-                <option>Enugu</option>
-                <option>Imo</option>
+            <form
+              className={classes["search-form"]}
+              onSubmit={submitFilteredProp}
+            >
+              <p>search by</p>
+              <select onChange={stateSelectHandler}>
+                <option>state</option>
+                <option>Lagos state</option>
+                <option>Anambra state</option>
+                <option>Delta state</option>
+                <option>Ebonyi state</option>
+                <option>Enugu state</option>
+                <option>Imo state</option>
               </select>
               <button>submit</button>
             </form>
