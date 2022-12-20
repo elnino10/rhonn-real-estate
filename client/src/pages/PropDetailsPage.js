@@ -211,7 +211,7 @@ const PropDetailsPage = () => {
               <input type="email" value={email} onChange={emailHandler} />
               <br></br>
               <label htmlFor="phone number">Phone Number</label>
-              <input type="number" value={phone} onChange={phoneHandler} />
+              <input type="tel" value={phone} onChange={phoneHandler} />
               <br></br>
               {messageSent ? (
                 <p style={{ color: msgColor }}>{response}</p>
