@@ -10,7 +10,7 @@ dotenv.config();
 
 const mongodbUrl = process.env.DATABASE_URL.replace(
   "<password>",
-  process.env.DATABASE_PASSWORD
+  process.env.DATABASE_PASSWORD 
 );
 
 mongoose
