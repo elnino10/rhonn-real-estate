@@ -86,7 +86,7 @@ const Content = (props) => {
             <option>fully-detached</option>
             <option>semi-detached</option>
             <option>terrace</option>
-            <option>commercial properties</option>
+            <option>apartments</option>
             <option>others</option>
           </select>
           <button type="submit">

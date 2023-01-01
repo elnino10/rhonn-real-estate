@@ -3,11 +3,14 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import cors from "cors";
+import multer from "multer";
 import UserRoute from "./routes/UserRoute.js";
 import PropertyRoute from "./routes/PropertyRoute.js";
 
-dotenv.config();
+const upload = multer()
 
+dotenv.config();
+ 
 const mongodbUrl = process.env.DATABASE_URL.replace(
   "<password>",
   process.env.DATABASE_PASSWORD 

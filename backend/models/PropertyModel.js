@@ -12,7 +12,7 @@ const propertySchema = new mongoose.Schema({
         "fully-detached",
         "semi-detached",
         "terrace",
-        "commercial properties",
+        "apartments",
         "others",
       ],
     },

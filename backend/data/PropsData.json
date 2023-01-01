@@ -416,5 +416,83 @@
     ],
     "category": "fully-detached",
     "state": "lagos state"
+  },
+  {
+    "id": "p12",
+    "name": "Lekki Fully finished Luxury Duplex",
+    "image": "../images/prop12/img121.jpg",
+    "images": [
+      { "id": "p120", "view": "../images/prop12/img122.jpg" },
+      { "id": "p121", "view": "../images/prop12/img123.jpg" },
+      { "id": "p122", "view": "../images/prop12/img124.jpg" },
+      { "id": "p123", "view": "../images/prop12/img125.jpg" },
+      { "id": "p124", "view": "../images/prop12/img126.jpg" },
+      { "id": "p125", "view": "../images/prop12/img127.jpg" },
+      { "id": "p126", "view": "../images/prop12/img128.jpg" },
+      { "id": "p127", "view": "../images/prop12/img121.jpg" }
+    ],
+    "description": "Fantastic 4Bedrooms fully finished  Detached Duplex",
+    "price": 160,
+    "location": "Ikate Elegushi, Lekki ",
+    "title": "Governor's Consent",
+    "featureDesc": "Fantastic 4Bedrooms fully finished  Detached Duplex with   bq for Sale!!",
+    "features": [
+      "Good environment",
+      "Oven",
+      "Microwave",
+      "CCTV",
+      "Fully serviced",
+      "Brand new",
+      "Video bell",
+      "Clean water",
+      "Secured estate",
+      "Good compound space",
+      "Fully fitted kitchen",
+      "Serenity",
+      "Water heaters",
+      "POP ceiling",
+      "Jacuzzi"
+    ],
+    "category": "fully-detached",
+    "state": "lagos state"
+  },
+  {
+    "id": "p13",
+    "name": "Lekki Fully finished Luxury Apartments",
+    "image": "../images/prop13/img131.jpg",
+    "images": [
+      { "id": "p130", "view": "../images/prop13/img132.jpg" },
+      { "id": "p131", "view": "../images/prop13/img133.jpg" },
+      { "id": "p132", "view": "../images/prop13/img134.jpg" },
+      { "id": "p133", "view": "../images/prop13/img135.jpg" },
+      { "id": "p134", "view": "../images/prop13/img136.jpg" },
+      { "id": "p135", "view": "../images/prop13/img137.jpg" },
+      { "id": "p136", "view": "../images/prop13/img138.jpg" },
+      { "id": "p137", "view": "../images/prop13/img131.jpg" }
+    ],
+    "description": "Fantastic 2Bedrooms apartment",
+    "price": 68,
+    "location": "Ikate Elegushi, Lekki ",
+    "title": "Governor's Consent",
+    "featureDesc": "Fantastic 2Bedrooms apartment for Sale!!",
+    "features": [
+      "Good environment",
+      "Oven",
+      "Microwave",
+      "CCTV",
+      "Fully serviced",
+      "Brand new",
+      "Video bell",
+      "Clean water",
+      "Secured estate",
+      "Good compound space",
+      "Fully fitted kitchen",
+      "Serenity",
+      "Water heaters",
+      "POP ceiling",
+      "24 hours power supply and security"
+    ],
+    "category": "apartments",
+    "state": "lagos state"
   }
 ]

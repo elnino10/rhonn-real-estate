@@ -61,6 +61,7 @@ const AboutUs = () => {
               nulla pariatur.
             </p>
           </div>
+          <div>This page should also include a video talking about our company.</div>
         </div>
       </div>
     </>
