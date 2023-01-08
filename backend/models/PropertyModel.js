@@ -16,7 +16,7 @@ const propertySchema = new mongoose.Schema({
         "others",
       ],
     },
-  },
+  }, 
   description: {
     type: String,
     required: true,

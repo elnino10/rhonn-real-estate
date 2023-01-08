@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
       });
       return;
     }
-
+  
     res.json({
       status: "success",
       results: propsData.length,
