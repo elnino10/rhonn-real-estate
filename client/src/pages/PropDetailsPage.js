@@ -9,7 +9,7 @@ import classes from "./PropDetailsPage.module.css";
 const PropDetailsPage = () => {
   const [loading, setLoading] = useState(true);
   const [property, setProperty] = useState({});
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(false); 
   const [image, setImage] = useState(null);
   const [imageClicked, setImageClicked] = useState(false);
   const [name, setName] = useState("");

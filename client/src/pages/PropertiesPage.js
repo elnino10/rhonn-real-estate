@@ -40,7 +40,7 @@ const PropertiesPage = (props) => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-      }}
+      }} 
     >
       <h2>Available Properties</h2>
       <p>You Can Never Go Wrong With Rhonn</p>
