@@ -72,7 +72,7 @@ const Navbar = (props) => {
                 to="/services"
                 className={({isActive}) => (isActive ? classes.active : "")}
               >
-                Services
+                Blog
               </NavLink>
             </li>
             <li>
