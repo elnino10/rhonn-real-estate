@@ -1,7 +1,7 @@
 import React from "react";
 
 import rhonn from "../assets/images/rhonn-logo.png";
- 
+
 import classes from "./ContactUs.module.css";
 import {
   AiOutlineFacebook,
@@ -9,6 +9,7 @@ import {
   AiOutlineMail,
   AiOutlinePhone,
   AiOutlineTwitter,
+  AiOutlineYoutube
 } from "react-icons/ai";
 import { FaTiktok } from "react-icons/fa";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
@@ -31,7 +32,7 @@ const ContactUs = () => {
               <AiOutlinePhone />
             </div>
             <div className={classes["phone-numbers"]}>
-              <p>080*********</p>
+              <p>+2348100382301</p>
             </div>
           </div>
           <div className={classes.email}>
@@ -39,7 +40,7 @@ const ContactUs = () => {
               <AiOutlineMail />
             </div>
             <div>
-              <p>contact@rhonn.com</p>
+              <p>real.rhonn@gmail.com</p>
             </div>
           </div>
           <div className={classes.address}>
@@ -58,7 +59,13 @@ const ContactUs = () => {
               <AiOutlineFacebook />
             </div>
             <div>
-              <p>facebook.com/RhonnRealEstate</p>
+              <a
+                href="https://web.facebook.com/profile.php?id=100063538042434"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <p>facebook</p>
+              </a>
             </div>
           </div>
           <div className={classes.instagram}>
@@ -66,7 +73,13 @@ const ContactUs = () => {
               <AiOutlineInstagram />
             </div>
             <div>
-              <p>rhonnInstagram</p>
+              <a
+                href="instagram.com/rhonn_real_estate/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <p>Instagram</p>
+              </a>
             </div>
           </div>
           <div className={classes.twitter}>
@@ -74,7 +87,9 @@ const ContactUs = () => {
               <AiOutlineTwitter />
             </div>
             <div>
-              <p>rhonnTwitter</p>
+              <a href="twitter.com" target="_blank" rel="noreferrer">
+                <p>Twitter</p>
+              </a>
             </div>
           </div>
           <div className={classes.tiktok}>
@@ -82,13 +97,33 @@ const ContactUs = () => {
               <FaTiktok />
             </div>
             <div>
-              <p>rhonnTiktok</p>
+              <p>Tiktok</p>
+            </div>
+          </div>
+          <div className={classes.tiktok}>
+            <div>
+              <AiOutlineYoutube />
+            </div>
+            <div>
+              <a
+                href="https://www.youtube.com/@rhonnrealestate2551"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <p>Youtube</p>
+              </a>
             </div>
           </div>
         </div>
       </div>
       <div className={classes.copyright}>
-        <p>copyright<span><AiOutlineCopyrightCircle /></span> Rhonn Real Estate 2022. All Rights Reserved.</p>
+        <p>
+          copyright
+          <span>
+            <AiOutlineCopyrightCircle />
+          </span>{" "}
+          Rhonn Real Estate 2022. All Rights Reserved.
+        </p>
       </div>
     </>
   );

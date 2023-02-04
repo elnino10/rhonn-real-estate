@@ -10,7 +10,7 @@ import PropertyRoute from "./routes/PropertyRoute.js";
 const upload = multer()
 
 dotenv.config();
- 
+
 const mongodbUrl = process.env.DATABASE_URL.replace(
   "<password>",
   process.env.DATABASE_PASSWORD 
@@ -19,7 +19,7 @@ const mongodbUrl = process.env.DATABASE_URL.replace(
 mongoose
   .connect(mongodbUrl, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true, 
   })
   .then(() => {
     console.log("db connected...!!!");
