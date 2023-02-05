@@ -15,10 +15,10 @@ const PropertiesPage = (props) => {
     try {
       const fetchData = async () => {
         let query;
-        if (!state && !category) query = ""
-        if (!state && category) query = `?category=${category}`
-        if (state && !category) query = `?state=${state}`
-        if (state && category) query = `?state=${state}&category=${category}`
+        if (!state && !category) query = "";
+        if (!state && category) query = `?category=${category}`;
+        if (state && !category) query = `?state=${state}`;
+        if (state && category) query = `?state=${state}&category=${category}`;
         const res = await axios.get(
           `http://127.0.0.1:5000/api/properties/${query}`
         );
@@ -40,7 +40,7 @@ const PropertiesPage = (props) => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-      }} 
+      }}
     >
       <h2>Available Properties</h2>
       <p>You Can Never Go Wrong With Rhonn</p>
