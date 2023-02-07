@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "../components/Header";
 import AllProps from "../components/AllProps";
 import ImageSlider from "../data/ImageSlider";
+import LoadingIndicator from "../components/UI/LoadingIndicator";
 import images from "../data/Images";
 import rhonn1 from "../assets/images/rhonn1.jpg";
 import rhonn2 from "../assets/images/rhonn2.jpg";
@@ -124,7 +125,9 @@ const Content = (props) => {
             <h4>Available Properties</h4>
           </div>
           {loading ? (
-            <p>LOADING...</p>
+            <div className={classes.loading}>
+              <LoadingIndicator />
+            </div>
           ) : (
             <AllProps data={data} state={state} category={category} />
           )}

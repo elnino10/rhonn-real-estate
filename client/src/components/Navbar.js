@@ -62,7 +62,7 @@ const Navbar = (props) => {
             <li>
               <NavLink
                 to="/about-us"
-                className={({isActive}) => (isActive ? classes.active : "")}
+                className={({ isActive }) => (isActive ? classes.active : "")}
               >
                 About Us
               </NavLink>
@@ -70,13 +70,18 @@ const Navbar = (props) => {
             <li>
               <NavLink
                 to="/services"
-                className={({isActive}) => (isActive ? classes.active : "")}
+                className={({ isActive }) => (isActive ? classes.active : "")}
               >
                 Blog
               </NavLink>
             </li>
             <li>
-              <a href="/properties_on-listing">On Listing</a>
+              <NavLink
+                to="/properties_on-listing"
+                className={({ isActive }) => (isActive ? classes.active : "")}
+              >
+                On Listing
+              </NavLink>
             </li>
             <li>
               <a href="#contact">Contact</a>

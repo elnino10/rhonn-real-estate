@@ -9,7 +9,7 @@ import {
   AiOutlineMail,
   AiOutlinePhone,
   AiOutlineTwitter,
-  AiOutlineYoutube
+  AiOutlineYoutube,
 } from "react-icons/ai";
 import { FaTiktok } from "react-icons/fa";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
@@ -54,7 +54,7 @@ const ContactUs = () => {
         </div>
         <div className={classes.socials}>
           <h4>Social Media</h4>
-          <div className={classes.facebook}>
+          <div className={classes.socialLink}>
             <div>
               <AiOutlineFacebook />
             </div>
@@ -64,11 +64,16 @@ const ContactUs = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <p>facebook</p>
+                <p>
+                  facebook{" "}
+                  <span className={classes.tooltiptext}>
+                    follow us on facebook
+                  </span>
+                </p>
               </a>
             </div>
           </div>
-          <div className={classes.instagram}>
+          <div className={classes.socialLink}>
             <div>
               <AiOutlineInstagram />
             </div>
@@ -78,29 +83,42 @@ const ContactUs = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <p>Instagram</p>
+                <p>
+                  Instagram{" "}
+                  <span className={classes.tooltiptext}>
+                    follow us on intagram
+                  </span>
+                </p>
               </a>
             </div>
           </div>
-          <div className={classes.twitter}>
+          <div className={classes.socialLink}>
             <div>
               <AiOutlineTwitter />
             </div>
             <div>
               <a href="twitter.com" target="_blank" rel="noreferrer">
-                <p>Twitter</p>
+                <p>
+                  Twitter{" "}
+                  <span className={classes.tooltiptext}>
+                    follow us on twitter
+                  </span>
+                </p>
               </a>
             </div>
           </div>
-          <div className={classes.tiktok}>
+          <div className={classes.socialLink}>
             <div>
               <FaTiktok />
             </div>
             <div>
-              <p>Tiktok</p>
+              <p>
+                Tiktok{" "}
+                <span className={classes.tooltiptext}>follows on tiktok</span>
+              </p>
             </div>
           </div>
-          <div className={classes.tiktok}>
+          <div className={classes.socialLink}>
             <div>
               <AiOutlineYoutube />
             </div>
@@ -110,7 +128,12 @@ const ContactUs = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <p>Youtube</p>
+                <p>
+                  Youtube
+                  <span className={classes.tooltiptext}>
+                    join us on youtube
+                  </span>
+                </p>
               </a>
             </div>
           </div>

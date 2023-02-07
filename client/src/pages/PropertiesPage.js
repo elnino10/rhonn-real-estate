@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
+import LoadingIndicator from "../components/UI/LoadingIndicator";
 
 import classes from "./PropertiesPage.module.css";
 
@@ -53,7 +54,9 @@ const PropertiesPage = (props) => {
     <div>
       <Header headerMsg={propHeader} />
       {loading ? (
-        <p>LOADING...</p>
+        <div className={classes.loading}>
+          <LoadingIndicator />
+        </div>
       ) : (
         <div className={classes.section}>
           {propsData.map((property) => (

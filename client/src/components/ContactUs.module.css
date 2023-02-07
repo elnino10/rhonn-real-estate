@@ -7,6 +7,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  border-radius: 5px;
+  margin: 10px 10px 10px 0;
 }
 
 .contact-header {
@@ -59,18 +61,13 @@
   width: 30%;
 }
 
-.facebook,
-.instagram,
-.twitter,
-.tiktok {
+.socialLink {
   display: flex;
   justify-content: flex-start;
   padding-bottom: 0.5rem;
+  position: relative;
 }
-.facebook div:nth-child(2),
-.instagram div:nth-child(2),
-.twitter div:nth-child(2),
-.tiktok div:nth-child(2) {
+.socialLink div:nth-child(2) {
   padding-left: 10px;
 }
 
@@ -84,6 +81,27 @@
   align-items: center;
 }
 
+.socialLink .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  color: black;
+  text-align: center;
+  border-radius: 3px;
+  padding: 0 2px;
+  position: absolute;
+  z-index: 1;
+  border: 1px solid black;
+  bottom: -25%;
+  background-color:white;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.socialLink:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
 @media only screen and (max-width: 768px) {
   .contact-us {
     display: flex;
@@ -93,7 +111,7 @@
     height: 60vh;
   }
 }
-@media only screen and (max-width: 376px) {
+@media only screen and (max-width: 392px) {
   .contact-us {
     display: flex;
     flex-direction: column;

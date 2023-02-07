@@ -8,7 +8,7 @@ import UserRoute from "./routes/UserRoute.js";
 import PropertyRoute from "./routes/PropertyRoute.js";
 
 const upload = multer()
-
+ 
 dotenv.config();
 
 const mongodbUrl = process.env.DATABASE_URL.replace(
