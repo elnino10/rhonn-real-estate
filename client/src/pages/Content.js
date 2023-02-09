@@ -110,13 +110,20 @@ const Content = (props) => {
         <div className={classes["welcome-message"]}>
           <h3>WELCOME MESSAGE</h3>
           <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum."
+            Welcome to Rhonn Real Estate!<br/> We are a real estate company founded
+            on the principles of integrity and transparency, and our goal is to
+            make the process of leasing and purchasing properties a seamless and
+            hassle-free experience for our clients. We understand that buying or
+            renting a new home can be a daunting task, and our team of experts
+            is dedicated to guiding you every step of the way. Whether you're a
+            first-time homebuyer or a seasoned real estate investor, we are here
+            to provide you with the support and knowledge you need to make
+            informed decisions. With a wide range of properties available and a
+            commitment to excellence, Rhonn Real Estate is the smart choice for
+            anyone looking to make a move. Browse our website to learn more
+            about what we have to offer, and don't hesitate to contact us with
+            any questions you may have. We look forward to helping you find your
+            dream home!
           </p>
           <div className={classes["message-button"]}>lorem</div>
         </div>
