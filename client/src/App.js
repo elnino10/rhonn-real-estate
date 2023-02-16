@@ -7,6 +7,8 @@ import ContactUs from "./components/ContactUs";
 import Blog from "./pages/Blog";
 import PropDetailsPage from "./pages/PropDetailsPage";
 import PropertiesPage from "./pages/PropertiesPage";
+import LandsPage from "./pages/LandsPage";
+import LandDetailsPage from "./pages/LandDetailsPage";
 
 function App() {
   const [stateVal, setStateVal] = useState("");
@@ -25,11 +27,16 @@ function App() {
           element={<Content onSubmitFilter={submitFilterHandler} />}
         />
         <Route path="/props/:itemId" element={<PropDetailsPage />} />
+        <Route path="/lands/:itemId" element={<LandDetailsPage />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/services" element={<Blog />} />
         <Route
-          path="/properties_on-listing"
+          path="/properties-on-listing"
           element={<PropertiesPage state={stateVal} category={categoryVal} />}
+        />
+        <Route
+          path="/lands-on-listing"
+          element={<LandsPage state={stateVal} category={categoryVal} />}
         />
       </Routes>
       <ContactUs />

@@ -6,6 +6,7 @@ import cors from "cors";
 import multer from "multer";
 import UserRoute from "./routes/UserRoute.js";
 import PropertyRoute from "./routes/PropertyRoute.js";
+import LandRoute from "./routes/LandRoute.js";
 
 const upload = multer()
  
@@ -32,6 +33,7 @@ app.use(cors());
 
 app.use("/api/users", UserRoute);
 app.use("/api/properties", PropertyRoute);
+app.use("/api/lands", LandRoute);
 
 const port = process.env.PORT;
 

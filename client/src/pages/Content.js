@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Header";
-import AllProps from "../components/AllProps";
 import ImageSlider from "../data/ImageSlider";
 import LoadingIndicator from "../components/UI/LoadingIndicator";
 import images from "../data/Images";
@@ -12,6 +11,8 @@ import rhonn3 from "../assets/images/rhonn3.jpg";
 import rhonn4 from "../assets/images/rhonn4.jpg";
 import { AiOutlineSearch } from "react-icons/ai";
 import classes from "./Content.module.css";
+import AvailablePropsList from "../components/AvailablePropsList";
+import AvailableLandsList from "../components/AvailableLandsList";
 
 const Content = (props) => {
   const [state, setState] = useState("");
@@ -57,9 +58,15 @@ const Content = (props) => {
     e.preventDefault();
     let query = "";
     if (state && !category) query = `?state=${state}`;
-    if (category && !state) query = `?category=${category}`;
-    if (state && category) query = `?state=${state}&category=${category}`;
-    navigate(`/properties_on-listing/${query}`);
+    if (category === "land") {
+      if (state && category) query = `?state=${state}&category=${category}`
+      if (!state && category) query = `?category=${category}`
+      navigate(`/lands-on-listing/${query}`);
+    }else {
+      if (category !== "land" && !state) query = `?category=${category}`;
+      if (state && category !== "land") query = `?state=${state}&category=${category}`;
+      navigate(`/properties-on-listing/${query}`);
+    }
 
     props.onSubmitFilter({ state, category });
     setState("");
@@ -108,24 +115,13 @@ const Content = (props) => {
       <Header headerMsg={headerContent} />
       <div className={classes.content}>
         <div className={classes["welcome-message"]}>
-          <h3>WELCOME MESSAGE</h3>
+          <h3>Welcome To Rhonn Real Estate!</h3>
           <p>
-            Welcome to Rhonn Real Estate!<br/> We are a real estate company founded
-            on the principles of integrity and transparency, and our goal is to
-            make the process of leasing and purchasing properties a seamless and
-            hassle-free experience for our clients. We understand that buying or
-            renting a new home can be a daunting task, and our team of experts
-            is dedicated to guiding you every step of the way. Whether you're a
-            first-time homebuyer or a seasoned real estate investor, we are here
-            to provide you with the support and knowledge you need to make
-            informed decisions. With a wide range of properties available and a
-            commitment to excellence, Rhonn Real Estate is the smart choice for
-            anyone looking to make a move. Browse our website to learn more
-            about what we have to offer, and don't hesitate to contact us with
-            any questions you may have. We look forward to helping you find your
-            dream home!
+            We are a real estate company founded on the principles of integrity
+            and transparency, and our goal is to make the process of leasing and
+            purchasing properties a seamless and hassle-free experience for our
+            clients.
           </p>
-          <div className={classes["message-button"]}>lorem</div>
         </div>
         <div id="property" className={classes["available-props"]}>
           <div className={classes["prop-header"]}>
@@ -136,7 +132,11 @@ const Content = (props) => {
               <LoadingIndicator />
             </div>
           ) : (
-            <AllProps data={data} state={state} category={category} />
+            data ? <AvailablePropsList
+              state={state}
+              category={category}
+              houses={data}
+            /> : <h3>No data Found</h3>
           )}
         </div>
         <div className={classes["other-props"]}>
@@ -188,10 +188,8 @@ const Content = (props) => {
               </div>
             </article>
           </div>
-          <div className={classes["article-view"]}>
-            <Link to="#">View More</Link>
-          </div>
         </div>
+        <AvailableLandsList />
         <div className={classes.fliers}>
           <img src={rhonn1} alt="rhonn-flier" />
           <img src={rhonn2} alt="rhonn-flier" />

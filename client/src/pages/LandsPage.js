@@ -6,7 +6,7 @@ import LoadingIndicator from "../components/UI/LoadingIndicator";
 
 import classes from "./PropertiesPage.module.css";
 
-const PropertiesPage = (props) => {
+const LandsPage = (props) => {
   const [loading, setLoading] = useState(true);
   const [propsData, setPropsData] = useState({});
   const [error, setError] = useState(false);
@@ -43,7 +43,7 @@ const PropertiesPage = (props) => {
         alignItems: "center",
       }}
     >
-      <h2>Available Properties</h2>
+      <h2>Available Plots (Land)</h2>
       <p>You Can Never Go Wrong With Rhonn</p>
     </div>
   );
@@ -57,7 +57,7 @@ const PropertiesPage = (props) => {
         <div className={classes.loading}>
           <LoadingIndicator />
         </div>
-      ) : propsData ? (
+      ) : (
         <div className={classes.section}>
           {propsData.map((property) => (
             <div key={property._id} className={classes.content}>
@@ -88,11 +88,9 @@ const PropertiesPage = (props) => {
             </div>
           ))}
         </div>
-      ) : (
-        <h3>No data found</h3>
       )}
     </div>
   );
 };
 
-export default PropertiesPage;
+export default LandsPage;

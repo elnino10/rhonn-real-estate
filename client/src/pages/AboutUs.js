@@ -28,8 +28,8 @@ const AboutUs = () => {
         <div className={classes.welcome}>
           <h1>Welcome To Rhonn Real Estate</h1>
           <p>
-            Rhonn Real Estate, which was established in 2021 but only officially
-            registered in 2022 with the corporate affairs commission, has
+            Rhonn Real Estate, which was established in 2022 but only officially
+            registered in 2023 with the corporate affairs commission, has
             effectively carved out a position for itself as one of the top
             companies in the real estate sector since its start. We are
             dedicated to offering our customers professional real estate

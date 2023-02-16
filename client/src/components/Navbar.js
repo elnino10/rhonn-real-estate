@@ -77,7 +77,15 @@ const Navbar = (props) => {
             </li>
             <li>
               <NavLink
-                to="/properties_on-listing"
+                to="/lands-on-listing"
+                className={({ isActive }) => (isActive ? classes.active : "")}
+              >
+                Lands
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/properties-on-listing"
                 className={({ isActive }) => (isActive ? classes.active : "")}
               >
                 On Listing
