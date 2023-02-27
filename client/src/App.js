@@ -14,12 +14,12 @@ function App() {
   const [stateVal, setStateVal] = useState("");
   const [categoryVal, setCategoryVal] = useState("");
 
-  const submitFilterHandler = ({state, category}) => {
+  const submitFilterHandler = ({ state, category }) => {
     setStateVal(state);
     setCategoryVal(category);
   };
-  
-  return ( 
+
+  return (
     <>
       <Routes>
         <Route
