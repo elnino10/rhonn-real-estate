@@ -208,8 +208,7 @@
   flex-wrap: wrap;
   width: 95vw;
   height: auto;
-  margin-top: 3rem;
-  margin-left: 2rem;
+  margin: 2rem;
   padding: 2rem;
   border-bottom: 1px solid #1b9883;
 }
@@ -303,7 +302,7 @@
   transform: translateY(-20%);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 824px) {
   .welcome-header h1 {
     font-size: 1rem;
   }
@@ -344,6 +343,9 @@
   }
   .motto {
     padding: 0 2rem;
+  }
+  .fliers {
+    margin: 20px;
   }
 }
 
@@ -395,9 +397,9 @@
   }
 }
 
-@media only screen and (max-width: 376px) {
+@media only screen and (max-width: 392px) {
   .fliers {
-    margin-left: 10px;
+    margin: 10px;
   }
   .fliers img {
     width: 18rem;

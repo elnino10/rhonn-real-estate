@@ -9,7 +9,7 @@ const LandItem = (props) => {
   return (
     <li key={props.id} className={classes.land}>
       <div className={classes.property}>
-        <Link to={`/props/${props.id}`}>
+        <Link to={`/lands/${props.id}`}>
           <img src={props.image} alt="pic" />
         </Link>
       </div>
@@ -23,7 +23,7 @@ const LandItem = (props) => {
         </div>
       </div>
       <div className={classes["property-actions"]}>
-        <Link to={`/props/${props.id}`}>
+        <Link to={`/lands/${props.id}`}>
           <span>
             <AiOutlineContacts />
           </span>

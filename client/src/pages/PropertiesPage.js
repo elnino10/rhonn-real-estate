@@ -33,6 +33,10 @@ const PropertiesPage = (props) => {
     }
   }, [state, category]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const propHeader = (
     <div
       style={{

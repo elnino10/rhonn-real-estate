@@ -1,97 +1,141 @@
 .about-us {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: auto;
 }
 
 .welcome {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0 5rem;
-    height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0 5rem;
+  height: 30vh;
 }
 
 .welcome h1 {
-    font-weight: normal;
-    font-style: italic;
-    text-align: center;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
 }
 
-.welcome p, 
+.welcome p,
 .goals div p {
-    text-align: start;
+  text-align: start;
 }
 
 .goals {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    padding: 0 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 0 5rem;
 }
 
 .goals div {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0 5rem;
-    width: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 5rem;
+  width: 25rem;
 }
 
 .values {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: start;
-    width: 25rem;
-    margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+  width: 25rem;
+  margin-bottom: 2rem;
 }
 
-@media only screen and (max-width: 768px) {
-    .about-us {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0;
-    }
-    .welcome {
-        padding: 0 1.5rem;
-    }
-    .welcome h1 {
-        font-size: 25px;
-        font-weight: bold;
-    }
-    .goals {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        height: auto;
-    }
-    .goals div p {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+@media only screen and (max-width: 824px) {
+  .about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+  }
+  .welcome {
+    padding: 0 1.5rem;
+  }
+  .welcome h1 {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .goals {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: auto;
+    width: 100vw;
+  }
+  .goals div {
+    margin: 0 10px;
+  }
+  .goals div p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .goals h3 {
+    align-self: flex-start;
+  }
 }
 
 @media only screen and (max-width: 415px) {
-    .about-us {
-        margin: 2rem 0;
-    }
-    .goals, .goals .mission {
-        margin: 2rem 0 0 0;
-    }
+  .about-us {
+    margin: 2rem 0;
+  }
+  .goals,
+  .goals .mission {
+    margin: 2rem 0 0 0;
+  }
 }
 
-.video-link {
-    margin-bottom: 2rem;
+.iframe-container {
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 416px) {
+  .about-us div {
+    width: 100%;
+  }
+  .goals {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 0 5rem;
+  }
+  .values {
+    margin: 0 20px 20px 5px;
+    padding: 10px;
+  }
+  .iframe-container {
+    position: relative;
+    height: 180px;
+    width: 212px;
+    margin-right: 25px;
+  }
+  .iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .welcome {
+    margin: 10px;
+    padding: 25px;
+    height: auto;
+  }
 }

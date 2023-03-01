@@ -4,11 +4,11 @@ import LandItem from "./LandItem";
 import classes from "./AvailablePropsList.module.css";
 
 const AvailableLandsList = (props) => {
-  const { state, category, houses } = props;
+  const { state, category, lands } = props;
 
   return (
-    <ul className={classes.lands}>
-      {houses ? houses.map((item) => (
+    <ul className={classes.houses}>
+      {lands ? lands.map((item) => (
         <LandItem
           key={item._id}
           id={item._id}
@@ -22,7 +22,7 @@ const AvailableLandsList = (props) => {
           state={state}
           category={category}
         />
-      )) : <h3>Nothing come out!</h3>}
+      )) : <h3>No Lands on-listing! Please check back later</h3>}
     </ul>
   );
 };

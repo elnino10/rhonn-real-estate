@@ -21,7 +21,7 @@ const LandsPage = (props) => {
         if (state && !category) query = `?state=${state}`;
         if (state && category) query = `?state=${state}&category=${category}`;
         const res = await axios.get(
-          `http://127.0.0.1:5000/api/properties/${query}`
+          `http://127.0.0.1:5000/api/lands/${query}`
         );
         if (res) setPropsData(res.data.data);
         setLoading(false);
@@ -62,7 +62,7 @@ const LandsPage = (props) => {
           {propsData.map((property) => (
             <div key={property._id} className={classes.content}>
               <div className={classes.image}>
-                <Link to={`/props/${property._id}`}>
+                <Link to={`/lands/${property._id}`}>
                   <img src={property.image} alt={`${property.name}-pic`} />
                 </Link>
                 <p>{`${property.price}M`}</p>
@@ -82,7 +82,7 @@ const LandsPage = (props) => {
                 <h4>Location</h4>
                 <p>{property.location}</p>
                 <div className={classes.button}>
-                  <Link to={`/props/${property._id}`}>View Details</Link>
+                  <Link to={`/lands/${property._id}`}>View Details</Link>
                 </div>
               </div>
             </div>

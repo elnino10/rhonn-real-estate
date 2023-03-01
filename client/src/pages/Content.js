@@ -20,6 +20,7 @@ const Content = (props) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [landData, setLandData] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,6 +29,22 @@ const Content = (props) => {
         const res = await axios.get("http://127.0.0.1:5000/api/properties/");
         if (res) {
           setData(res.data.data);
+          setLoading(false);
+        }
+      };
+      fetchData();
+    } catch (error) {
+      setError(true);
+      setLoading(false);
+      console.log(error);
+    }
+  }, []);
+  useEffect(() => {
+    try {
+      const fetchData = async () => {
+        const res = await axios.get("http://127.0.0.1:5000/api/lands/");
+        if (res) {
+          setLandData(res.data.data);
           setLoading(false);
         }
       };
@@ -59,12 +76,13 @@ const Content = (props) => {
     let query = "";
     if (state && !category) query = `?state=${state}`;
     if (category === "land") {
-      if (state && category) query = `?state=${state}&category=${category}`
-      if (!state && category) query = `?category=${category}`
+      if (state && category) query = `?state=${state}&category=${category}`;
+      if (!state && category) query = `?category=${category}`;
       navigate(`/lands-on-listing/${query}`);
-    }else {
+    } else {
       if (category !== "land" && !state) query = `?category=${category}`;
-      if (state && category !== "land") query = `?state=${state}&category=${category}`;
+      if (state && category !== "land")
+        query = `?state=${state}&category=${category}`;
       navigate(`/properties-on-listing/${query}`);
     }
 
@@ -123,6 +141,9 @@ const Content = (props) => {
             clients.
           </p>
         </div>
+
+        {/* Properties Section  */}
+
         <div id="property" className={classes["available-props"]}>
           <div className={classes["prop-header"]}>
             <h4>Available Properties</h4>
@@ -131,12 +152,14 @@ const Content = (props) => {
             <div className={classes.loading}>
               <LoadingIndicator />
             </div>
-          ) : (
-            data ? <AvailablePropsList
+          ) : data ? (
+            <AvailablePropsList
               state={state}
               category={category}
               houses={data}
-            /> : <h3>No data Found</h3>
+            />
+          ) : (
+            <h3>No data Found</h3>
           )}
         </div>
         <div className={classes["other-props"]}>
@@ -189,13 +212,36 @@ const Content = (props) => {
             </article>
           </div>
         </div>
-        <AvailableLandsList />
+
+        {/* Lands Section */}
+
+        <div id="property" className={classes["available-props"]}>
+          <div className={classes["prop-header"]}>
+            <h4>Available Lands</h4>
+          </div>
+          {loading ? (
+            <div className={classes.loading}>
+              <LoadingIndicator />
+            </div>
+          ) : data ? (
+            <AvailableLandsList
+              state={state}
+              category={category}
+              lands={landData}
+            />
+          ) : (
+            <h3>No Lands Aailable Now! Please check back later</h3>
+          )}
+        </div>
         <div className={classes.fliers}>
           <img src={rhonn1} alt="rhonn-flier" />
           <img src={rhonn2} alt="rhonn-flier" />
           <img src={rhonn3} alt="rhonn-flier" />
           <img src={rhonn4} alt="rhonn-flier" />
         </div>
+
+        {/* Image Carousel Section */}
+        
         <div className={classes.slider}>
           <ImageSlider images={images} />
         </div>

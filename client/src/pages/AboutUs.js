@@ -46,7 +46,7 @@ const AboutUs = () => {
               resolving the issues that property seekers and potential buyers
               encounter. Additionally, we assist property sellers in speeding up
               transactions.
-            </p>
+            </p> 
           </div>
           <div className={classes.mission}>
             <h3>Our Mission</h3>
@@ -67,7 +67,7 @@ const AboutUs = () => {
             standardized housing.
           </p>
         </div>
-        <div className={classes["video-link"]}>
+        <div className={classes["iframe-container"]}>
           <iframe
             width="560"
             height="315"
