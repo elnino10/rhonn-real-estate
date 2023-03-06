@@ -23,10 +23,19 @@ const Content = (props) => {
   const [landData, setLandData] = useState([]);
   const navigate = useNavigate();
 
+  let baseURL;
+  if (process.env.NODE_ENV === "development") {
+    baseURL = "http://127.0.0.1:5000";
+  }else if (process.env.NODE_ENV === "production") {
+    baseURL = "https://rhonnrealestate.com"
+  }
+
   useEffect(() => {
     try {
       const fetchData = async () => {
-        const res = await axios.get("http://127.0.0.1:5000/api/properties/");
+        const res = await axios.get(
+          `${baseURL}/api/properties/`
+        );
         if (res) {
           setData(res.data.data);
           setLoading(false);
@@ -38,11 +47,13 @@ const Content = (props) => {
       setLoading(false);
       console.log(error);
     }
-  }, []);
+  }, [baseURL]);
   useEffect(() => {
     try {
       const fetchData = async () => {
-        const res = await axios.get("http://127.0.0.1:5000/api/lands/");
+        const res = await axios.get(
+          `${baseURL}/api/lands/`
+        );
         if (res) {
           setLandData(res.data.data);
           setLoading(false);
@@ -54,7 +65,7 @@ const Content = (props) => {
       setLoading(false);
       console.log(error);
     }
-  }, []);
+  }, [baseURL]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -241,7 +252,7 @@ const Content = (props) => {
         </div>
 
         {/* Image Carousel Section */}
-        
+
         <div className={classes.slider}>
           <ImageSlider images={images} />
         </div>

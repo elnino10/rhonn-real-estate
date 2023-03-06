@@ -1,6 +1,5 @@
 import React from "react";
-import { AiOutlineContacts } from "react-icons/ai";
-import { CiLocationOn } from "react-icons/ci";
+import { AiOutlineAim, AiOutlineContacts } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 import classes from "./LandItem.module.css";
@@ -17,7 +16,7 @@ const LandItem = (props) => {
         <h4>{props.name}</h4>
         <div>
           <span>
-            <CiLocationOn />
+            <AiOutlineAim />
           </span>
           <p>{props.location}</p>
         </div>

@@ -25,7 +25,7 @@ const LandDetailsPage = () => {
     try {
       const fetchData = async () => {
         const res = await axios.get(
-          `http://127.0.0.1:5000/api/lands/${params.itemId}`
+          `${process.env.API_URL}/api/lands/${params.itemId}`
           );
           if (res.data) {
             setProperty(res.data.data.property);
@@ -82,7 +82,7 @@ const LandDetailsPage = () => {
 
     const sendMessage = async () => {
       const res = await axios.post(
-        "http://127.0.0.1:5000/api/users/post-message",
+        `${process.env.API_URL}/api/users/post-message`,
         {
           name,
           email,

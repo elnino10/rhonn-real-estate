@@ -21,7 +21,7 @@ const LandsPage = (props) => {
         if (state && !category) query = `?state=${state}`;
         if (state && category) query = `?state=${state}&category=${category}`;
         const res = await axios.get(
-          `http://127.0.0.1:5000/api/lands/${query}`
+          `${process.env.API_URL}/api/lands/${query}`
         );
         if (res) setPropsData(res.data.data);
         setLoading(false);

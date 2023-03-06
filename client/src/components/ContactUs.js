@@ -4,6 +4,7 @@ import rhonn from "../assets/images/rhonn-logo.png";
 
 import classes from "./ContactUs.module.css";
 import {
+  AiOutlineAim,
   AiOutlineFacebook,
   AiOutlineInstagram,
   AiOutlineMail,
@@ -13,7 +14,6 @@ import {
 } from "react-icons/ai";
 import { FaTiktok } from "react-icons/fa";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
-import { CiLocationOn } from "react-icons/ci";
 
 const ContactUs = () => {
   return (
@@ -46,7 +46,7 @@ const ContactUs = () => {
             </div>
             <div className={classes.address}>
               <div>
-                <CiLocationOn />
+                <AiOutlineAim />
               </div>
               <div>
                 <p>No.1 lorem ipsum</p>
