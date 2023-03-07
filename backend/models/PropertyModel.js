@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const propertySchema = new mongoose.Schema({
   name: { type: String, required: [true, "Property name is required"] },

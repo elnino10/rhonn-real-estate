@@ -1,4 +1,4 @@
-const express = require("express");
+import express from "express";
 import Property from "../models/propertyModel.js";
 
 const router = express.Router();

@@ -1,9 +1,9 @@
-const express = require("express")
-const dotenv = require("dotenv")
-const mongoose = require("mongoose")
-const bodyParser = require("body-parser")
-const cors = require("cors")
-const helmet = require("helmet")
+import express from "express";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import bodyParser from "body-parser";
+import cors from "cors";
+import helmet from "helmet";
 
 import UserRoute from "./routes/UserRoute.js";
 import PropertyRoute from "./routes/PropertyRoute.js";
