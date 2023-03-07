@@ -1,15 +1,14 @@
-import express from "express";
-import dotenv from "dotenv";
-import mongoose from "mongoose";
-import bodyParser from "body-parser";
-import cors from "cors";
-import helmet from "helmet";
-import multer from "multer";
+const express = require("express")
+const dotenv = require("dotenv")
+const mongoose = require("mongoose")
+const bodyParser = require("body-parser")
+const cors = require("cors")
+const helmet = require("helmet")
+
 import UserRoute from "./routes/UserRoute.js";
 import PropertyRoute from "./routes/PropertyRoute.js";
 import LandRoute from "./routes/LandRoute.js";
 
-const upload = multer();
 dotenv.config();
 
 const mongodbUrl = process.env.DATABASE_URL.replace(

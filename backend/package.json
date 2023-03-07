@@ -7,7 +7,7 @@
   "proxy": "http://127.0.0.1:5000",
   "scripts": {
     "start": "nodemon node --trace-warnings backend/app.js",
-    "start:prod": "NODE_ENV=production nodemon --watch backend --exec babel-node backend/app.js",
+    "prod": "NODE_ENV=production nodemon --watch backend --exec babel-node backend/app.js",
     "debug": "ndb backend/app.js"
   },
   "keywords": [],
