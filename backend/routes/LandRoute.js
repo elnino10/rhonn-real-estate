@@ -1,4 +1,4 @@
-import express from "express";
+const express = require("express");
 import Land from "../models/landModel.js";
 
 const router = express.Router();
