@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const propertySchema = new mongoose.Schema({
   name: { type: String, required: [true, "Property name is required"] },
@@ -16,7 +16,7 @@ const propertySchema = new mongoose.Schema({
         "others",
       ],
     },
-  }, 
+  },
   description: {
     type: String,
     required: true,
@@ -27,7 +27,7 @@ const propertySchema = new mongoose.Schema({
   },
   state: {
     type: String,
-    lowercase: true
+    lowercase: true,
   },
   image: {
     type: String,
@@ -39,14 +39,14 @@ const propertySchema = new mongoose.Schema({
   },
   features: {
     type: Array,
-    required: true
+    required: true,
   },
   featureDesc: String,
   price: {
     type: Number,
     required: true,
   },
-  title: String
+  title: String,
 });
 
 const propertyModel = mongoose.model("Property", propertySchema);
